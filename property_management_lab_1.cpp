@@ -8,34 +8,22 @@
 
 int main() {
 
-    Property_manager Boris("Boris");
+    bool isWorking = true;
 
-    Customer Bogach("Bogach" , 1000000);
-    Customer Serednii("Serednii" , 110000);
+    do
+    {
+        std::cout << "1. Create Property manager\n";
+        std::cout << "2. Create House\n";
+        std::cout << "3. Create Room\n";
+        std::cout << "4. Create Flat\n";
+        std::cout << "5. Create Customer\n";
+        std::cout << "==================================\n";
+        std::cout << "6. Choose existed Property manager\n";
+        int a;
+        std::cin >> a;
 
-    Room room_a(30000);
-    Room room_b(40000);
-    Room room_c(50000);
-    Room room_d(70000);
+    } while (isWorking);
 
-    Flat flat_1("Shevchenka_13" , &room_a , &room_d);
-    House house_1("Ostrogradskogo_2" , 110000);
-    Flat flat_2("Gutten_morgen_9" , &room_b , &room_c);
-
-    Boris.addToAssortment(&flat_1);
-    Boris.addToAssortment(&house_1);
-    Boris.addToAssortment(&flat_2);
-
-    Bogach.buyProperty(&flat_1 , Boris);
-    Serednii.buyProperty(&flat_2 , Boris);
-    Bogach.buyProperty(&flat_2 , Boris);
-    Serednii.buyProperty(&house_1 , Boris);
-    Bogach.buyProperty(&house_1 , Boris);
-
-    Bogach.taxDeclaration();
-    Serednii.taxDeclaration();
-
-    Boris.taxDeclaration();
 
     return 0;
 }
